@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Pessoas</title>
+</head>
+<body>
+    <h1>Lista de Pessoas</h1>
+    <a href="{% url 'cadastrar_pessoa' %}">Cadastrar Pessoa</a>
+    <ul>
+        {% for pessoa in pessoas %}
+        <li>
+            <a href="{% url 'consultar_pessoa' pessoa.id %}">{{ pessoa.nome }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
